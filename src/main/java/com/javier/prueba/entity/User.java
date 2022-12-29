@@ -15,6 +15,7 @@ public class User {
 		this.body = body;
 	}
 
+	//GET & SET
 	public int getUserId() {
 		return userId;
 	}
@@ -47,7 +48,7 @@ public class User {
 		this.body = body;
 	}
 	
-	//Get y Set
+
 	
 	
 	
