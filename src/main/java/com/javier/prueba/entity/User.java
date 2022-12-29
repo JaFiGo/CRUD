@@ -7,6 +7,9 @@ public class User {
 	private String body;
 	
 	//constructor
+	public User() {
+		
+	}
 	public User(int userId, int id, String title, String body) {
 		this.userId = userId;
 		this.id = id;
