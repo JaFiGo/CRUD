@@ -8,7 +8,6 @@ public class User {
 	
 	//constructor
 	public User(int userId, int id, String title, String body) {
-		super();
 		this.userId = userId;
 		this.id = id;
 		this.title = title;
