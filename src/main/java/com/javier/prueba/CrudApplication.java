@@ -30,9 +30,9 @@ public class CrudApplication {
 			try {
 				List<User> usuarios = mapper.readValue(inputStream, typeReference);
 				userService.save(usuarios);
-				System.out.println("Clientes guardados");
+				System.out.println("Usuarios guardados");
 			}catch(IOException e){
-				System.out.println("No se pudo guardar usuarios" + e.getMessage());
+				System.out.println("No se pudo guardar usuarios " + e.getMessage());
 			}
 		};
 	}
