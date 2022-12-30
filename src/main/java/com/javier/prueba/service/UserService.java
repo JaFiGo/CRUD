@@ -30,6 +30,14 @@ public class UserService {
 	
 	//funcion para almacenar un usuario en el registro
 	public User save(User u) {
+		int cont = 0 ;
+		for (User aux : usuarios) {
+			if (aux.getId() == u.getId()) {
+				usuarios.set(cont, u);
+				return u;
+			}
+			cont ++;
+		}
 		usuarios.add(u);
 		return u;
 	}
