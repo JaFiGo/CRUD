@@ -18,10 +18,10 @@ public class UserService {
 	}
 	
 	//funcion para encontrar un usuario registrado
-	public User find(int uId, int id) {
+	public User find(int id) {
 		//si encuentra el ususario por su id lo devuelve, caso contrario retorna un null
 		for (User u: usuarios) {
-			if(u.getUserId() == uId && u.getId() == id) {
+			if(u.getId() == id) {
 				return u;
 			}
 		}
@@ -42,24 +42,10 @@ public class UserService {
 		return users;
 	}
 	
-	//funcion para actualizar un usuario
-	public User update(int uId,int id, User us) {
-		int cont = 0;
+	//funcion para eleminar usuarios en base a su id
+	public boolean delete(int id) {
 		for (User u: usuarios) {
-			if(u.getUserId() == uId && u.getId() == id) {
-				us.setUserId(uId);
-				us.setId(id);
-				usuarios.set(cont, us);
-			}
-			cont++;
-		}
-		return us;
-	}
-	
-	//funcion para eleminar usuarios en base a su userId y su id
-	public boolean delete(int uId,int id) {
-		for (User u: usuarios) {
-			if(u.getUserId() == uId && u.getId() == id) {
+			if(u.getId() == id) {
 				return usuarios.remove(u);
 			}
 		}

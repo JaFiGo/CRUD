@@ -4,7 +4,6 @@ import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -28,10 +27,10 @@ public class UserController {
 		return service.list();
 	}
 	
-	//Solicitud Get para obtener el usuario deseado especificamente por su userID y su id
-	@GetMapping("/{uid}/{id}")
-	public User find (@PathVariable("uid") int uid, @PathVariable("id") int id) {
-		return service.find(uid,id);
+	//Solicitud Get para obtener el usuario deseado especificamente su id
+	@GetMapping("/{id}")
+	public User find (@PathVariable("id") int id) {
+		return service.find(id);
 	}
 	
 	//Solicitud Post para agregar un usuario al registro
@@ -40,15 +39,9 @@ public class UserController {
 		return service.save(user);
 	}
 	
-	//Solicitud Put para editar un usuario en especifico 
-	@PutMapping("/{uid}/{id}")
-	public User update(@PathVariable("uid") int uid, @PathVariable("id") int id, @RequestBody User user) {
-		return service.update(uid,id,user);
-	}
-	
 	//Solicitud Delete para eliminar un usuario en especifico
 	@DeleteMapping("/{uid}/{id}")
-	public boolean delete(@PathVariable("uid") int uid, @PathVariable("id") int id) {
-		return service.delete(uid, id);
+	public boolean delete(@PathVariable("id") int id) {
+		return service.delete(id);
 	}
 }
