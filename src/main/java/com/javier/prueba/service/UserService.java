@@ -28,7 +28,7 @@ public class UserService {
 		return null;
 	}
 	
-	//funcion para almacenar un usuario en el registro
+	//funcion para almacenar un usuario en el registro, si está repetido lo actualiza
 	public User save(User u) {
 		int cont = 0 ;
 		for (User aux : usuarios) {
