@@ -40,7 +40,7 @@ public class UserController {
 	}
 	
 	//Solicitud Delete para eliminar un usuario en especifico
-	@DeleteMapping("/{uid}/{id}")
+	@DeleteMapping("/{id}")
 	public boolean delete(@PathVariable("id") int id) {
 		return service.delete(id);
 	}
